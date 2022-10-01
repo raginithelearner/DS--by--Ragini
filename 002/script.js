@@ -31,7 +31,6 @@ checker.addEventListener("click", () => {
 for (let i = 0; i <= iter; i++) {
     element += palinValue[i];
   }
-  console.log(iter);
 
 Array.from(element).forEach((digit, index) => {
   isTrue = (digit == palinValue[palinLength - (index + 1)]) ? true : false;
