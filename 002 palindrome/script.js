@@ -9,6 +9,7 @@ const inputWrapper = document.querySelector("#inputWrapper");
 const result = document.querySelector("#result");
 const modalClose = document.querySelector("#modal-close");
 const dialog = document.querySelector("#dialog");
+const box = document.querySelector("#box");
 
 
 let isTrue;
@@ -19,7 +20,7 @@ numberEntered.addEventListener("input", () => {
   palinValue = numberEntered.value;
 
   if (palinValue != null && palinValue != "") {
-    checker.style.display = "inline-block";
+    box.style.transform = "scaleX(1)";
   }
 });
 let element = "";
