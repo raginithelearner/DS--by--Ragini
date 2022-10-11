@@ -1,6 +1,4 @@
 "use strict";
-
-
 class getIndices{
     constructor(intArray, intTarget) {
         this.nums = intArray;
