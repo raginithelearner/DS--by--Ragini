@@ -1,27 +1,20 @@
-let userString = 'abcdabc';
-let counter = 0;
-let subString = '';
-let strRes = userString;
-let obj = {};
-
-for (let i = 0; i < userString.length; i++) {
-    if(subString.match(userString[i]) || i == (userString.length - 1)){
-        if(subString.match(userString[i])){
-            obj[i] = subString;
-            subString = userString[i];
-            break;
-        }
+const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
+const str = "NikhilRaginiAarushiJanki";
+let strTemp = "";
+let temp = "";
+let xyz = "";
+[...str].forEach(ch => {
+  if (!strTemp.includes(ch)) {
+    strTemp += ch;
+    xyz = strTemp
+  }
+  else {
+    if (temp.length < strTemp.length) {
+      temp = strTemp;
     }
-    else{
-        subString += userString[i];
-    }
-}
-
-for (let j = 0; j < Object.keys(obj).length; j++) {
-    if(strRes.length > obj[Object.keys(obj)[j]].length){
-        numRes = obj[Object.keys(obj)[j]].length;
-        strRes = obj[Object.keys(obj)[j]];
-    }
-}
-
-document.write('Length: ' + strRes.length + '<br>Substring: ' + strRes);
+    strTemp = ch;
+  }  
+});
+h1.textContent = (temp.length < xyz.length) ? xyz : temp;
+h2.innerHTML = str.replace(temp, `<b style="background-color:green; color:white; padding: 5px; border-radius: 5px">${h1.textContent}</b>`);
